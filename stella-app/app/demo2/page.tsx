@@ -15,7 +15,7 @@ async function getData(): Promise<User[]> {
   const res = await fetch('https://jsonplaceholder.typicode.com/users', {
     cache: 'no-store'
   })
-
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   return res.json();
 }
 
