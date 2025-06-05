@@ -24,3 +24,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.page{
+  @applay flex min-h-screen flex-col items-center justify-betwen p-24;
+}
