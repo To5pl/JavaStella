@@ -33,8 +33,10 @@ async function getData(): Promise<User[]> {
 }
 
 export default async function Demo2() {
-  const users = await getUsers();
-  const posts = await getPosts();
+  const usersData = await getUsers();
+  const postsData = await getPosts();
+
+  const [users, posts] = await Promise.all([ usersData, postsData ])
 
   return (
     <main>
