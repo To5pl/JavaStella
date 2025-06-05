@@ -1,7 +1,7 @@
 'use client';
-import { useState } from 'react';
+import { PropsWithChildren, useState } from 'react';
 
-export default function ClientComponent() {
+export default function ClientComponent({ children}: PropsWithChildren) {
   const [value, setValue] = useState(0);
 
   return (
@@ -9,6 +9,9 @@ export default function ClientComponent() {
       <button onClick={() => setValue(s => s+1)}>
         Counter {value}
       </button>
+
+      <div>Server Component here...</div>
+      { children }
     </div>
   )
 }

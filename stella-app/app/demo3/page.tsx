@@ -7,8 +7,9 @@ export default function Demo3() {
     <main>
       <div>
         <h1>Demo 3</h1>
-        <ClientComponent />
-        <ServerComponent />
+        <ClientComponent>
+          <ServerComponent />
+        </ClientComponent>
       </div>
     </main>
   )
