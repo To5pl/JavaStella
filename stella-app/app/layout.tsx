@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Raleway} from "next/font/google";
 import "./globals.css";
 
-const raleway = Raleway ({subsets: [`latin`]})
+const raleway = Raleway ({subsets: ["latin"]})
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -28,7 +28,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${raleway.className} antialiased`}
       >
-        navigation bar here
+        <a href= "./">Home</a>
+        <a href= "/demo1">Demo1</a>
+        <a href= "/demo2">Demo2</a>
+        
         <hr></hr>
         {children}
       </body>
