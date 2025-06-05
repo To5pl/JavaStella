@@ -1,3 +1,4 @@
+import { Post } from '@/model/post';
 import { User } from '@/model/user';
 
 
@@ -10,6 +11,18 @@ export const metadata={
     }
 }
 
+async function getPosts(): Promise<Post[]> {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+  
+  return res.json();
+}
+
+async function getUsers(): Promise<User[]> {
+  const res = await fetch('https://jsonplaceholder.typicode.com/users');
+  
+  return res.json();
+}
+
 
 async function getData(): Promise<User[]> {
   const res = await fetch('https://jsonplaceholder.typicode.com/users', {
@@ -20,14 +33,24 @@ async function getData(): Promise<User[]> {
 }
 
 export default async function Demo2() {
-  const data = await getData();
+  const users = await getUsers();
+  const posts = await getPosts();
 
   return (
     <main>
       <h1>Demo 2</h1>
+
+      <h2>Users</h2>
       {
-        data?.map(user => {
+        users?.map(user => {
           return <li key={user.id}>{user.name}</li>
+        })
+      }
+
+      <h2>Posts</h2>
+      {
+        posts?.map(post => {
+          return <li key={post.id}>{post.title}</li>
         })
       }
     </main>
