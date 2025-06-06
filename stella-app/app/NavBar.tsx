@@ -16,6 +16,7 @@ export default function NavBar() {
       <a href="/demo3">Demo3</a>
       <a href="/demo4">Demo4</a>
       <a href="/demo5">Demo5</a>
+      <a href="/demo5">Demo6</a>
       - { state.email } | { state.username }
       
       <hr/>

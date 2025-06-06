@@ -8,7 +8,7 @@ export interface UserState {
 }
 
 const useUsers = create<UserState>((set) => ({
-  users: [{ id: 1, name: 'Fabio' }, { id: 2, name: 'Lorenzo' }],
+  users: [{ id: 1, name: 'Fabio' }, { id: 2, name: 'Lorenzo' }, { id: 3, name: 'Stella' }],
   add: (user: User) => {
     set(s => ({ users: [...s.users, user] }))
   },
