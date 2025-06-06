@@ -3,10 +3,11 @@
 import { ProfileContext } from '@/app/store/ProfileContextProvider';
 
 import React, { useContext } from 'react';
+import { LanguageContext } from './store/LanguageContextProvider';
 
 export default function NavBar() {
   const { state, dispatch } = useContext(ProfileContext);
-
+  
   return (
     <div>
       <a href="/">Home</a>
@@ -16,6 +17,7 @@ export default function NavBar() {
       <a href="/demo4">Demo4</a>
       <a href="/demo5">Demo5</a>
       - { state.email } | { state.username }
+      
       <hr/>
     </div>
   )
